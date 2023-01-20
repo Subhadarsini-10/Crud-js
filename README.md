@@ -2,6 +2,8 @@
 
 ### Created a dummy website with crud operation using RecatJS and Bootstrap.
 Json data from json-server.
+### To run the website in terminal:
+npm run start:dev
 ## The website include:
 1. Dummy login Page
 2. Json data requied for a single game
