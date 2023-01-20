@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import "./App.css";
+import Home from "./components/Pages/Home";
+import About from "./components/Pages/About";
+import Contact from "./components/Pages/Contact";
+import Navbar from "./components/Layout/Navbar";
+import Error from "./components/Pages/Error";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import AddUsers from "./components/Users/AddUsers";
+import EditUser from "./components/Users/EditUser";
+import User from "./components/Users/User";
+import Login from "./components/Pages/Login";
+import MainPage from "./components/Pages/MainPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+        <Route exact path="/main" element={<MainPage />}></Route>
+          <Route exact path="/" element={<Home />}></Route>
+          <Route exact path="/about" element={<About />}></Route>
+          <Route exact path="/contact" element={<Contact />}></Route>
+          <Route exact path="/login" element={<Login />}></Route>
+          <Route exact path="/user/add" element={<AddUsers />}></Route>
+          <Route exact path="/user/edit/:id" element={<EditUser />}></Route>
+          <Route exact path="/user/:id" element={<User />}></Route>
+          <Route exact path="*" element={<Error />}></Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
