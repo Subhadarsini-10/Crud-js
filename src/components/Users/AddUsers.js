@@ -20,7 +20,7 @@ const AddUsers = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     await axios.post("http://localhost:3001/users", user);
-    navigate("/");
+    navigate("/home");
   };
 
   return (

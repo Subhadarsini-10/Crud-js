@@ -19,7 +19,7 @@ const Home = () => {
   };
   return (
     <div className="container">
-      <h1>Home</h1>
+      <h1>All Users</h1>
       <table class="table">
         <thead>
           <tr className="bg-dark text-white">

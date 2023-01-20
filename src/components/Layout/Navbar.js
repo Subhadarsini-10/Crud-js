@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary bg-warning">
       <div className="container-fluid container">
-        <a className="navbar-brand" href="/main">
+        <a className="navbar-brand" href="/">
           Game Crud
         </a>
         <button
@@ -22,8 +22,8 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink className="nav-link active" aria-current="page" to="/">
-                Home Page
+              <NavLink className="nav-link active" aria-current="page" to="/home">
+                All Users
               </NavLink>
             </li>
             <li className="nav-item">
