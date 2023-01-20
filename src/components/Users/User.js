@@ -13,14 +13,13 @@ const User = () => {
 
   const { id } = useParams();
 
-  useEffect(() => {
+  useEffect((id) => {
+    const loadUsers = async () => {
+      const result = await axios.get(`http://localhost:3001/users/${id}`);
+      setUser(result.data);
+    };
     loadUsers();
   }, []);
-
-  const loadUsers = async () => {
-    const result = await axios.get(`http://localhost:3001/users/${id}`);
-    setUser(result.data);
-  };
 
   return (
     <div className="container py-4">
