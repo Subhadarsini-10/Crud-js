@@ -19,14 +19,13 @@ const EditUser = () => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  useEffect(() => {
+  useEffect((id, user) => {
+    const loadUsers = async () => {
+      const result = await axios.get(`http://localhost:3001/users/${id}`, user);
+      setUser(result.data);
+    };
     loadUsers();
   }, []);
-
-  const loadUsers = async () => {
-    const result = await axios.get(`http://localhost:3001/users/${id}`, user);
-    setUser(result.data);
-  };
 
   const onSubmit = async (e) => {
     e.preventDefault();
